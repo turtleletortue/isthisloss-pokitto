@@ -57,12 +57,12 @@
 
 // Enable Pokitto::Sound::playSFX
 // Optional. Comment to disable.
-#define PROJ_ENABLE_SFX
+//#define PROJ_ENABLE_SFX
 
 
 // Enable streaming music from SD
 // Optional. Comment to disable.
-#define PROJ_ENABLE_SD_MUSIC
+//#define PROJ_ENABLE_SD_MUSIC
 
 
 // Defines the rate your audio has been encoded with.
@@ -97,19 +97,19 @@
 // Choose the maximum amount of sprites that can be drawn per frame.
 // Higher values consume more RAM.
 // Optional. Default is 100.
-#define PROJ_MAX_SPRITES 100
+//#define PROJ_MAX_SPRITES 100
 
 
 // Choose the height in pixels of each tile
 // Higher values consume more RAM.
 // Optional. Default is 16.
-#define PROJ_TILE_H 16
+//#define PROJ_TILE_H 16
 
 
 // Choose the width in pixels of each tile
 // Higher values consume more RAM.
 // Optional. Default is 16.
-#define PROJ_TILE_W 16
+//#define PROJ_TILE_W 16
 
 
 // ---- SECTION: MISC ----
@@ -124,4 +124,4 @@
 // 1-tile-per-byte (256 tiles maximum) or
 // 2-tiles-per-byte (16 tiles maximum) format.
 // Optional. Can be 16 or 256. Default is 16.
-#define MAX_TILE_COUNT 16
+//#define MAX_TILE_COUNT 16

@@ -36,8 +36,14 @@ void turtleLogo(){
     pok.display.setCursor(63, 70);
     pok.display.print("presents");
     pok.display.update();
-    //snd.playTone(0,975,5, 590);
-    wait(5);
+    snd.playTone(1,975,amplitude,wavetype,arpmode);
+    wait(0.59);
+    snd.playTone(1,950,amplitude,wavetype,arpmode);
+    wait(0.41);
+    snd.playTone(1,900,amplitude,wavetype,arpmode);
+    wait(0.39);
+    snd.playTone(1,821,amplitude,wavetype,arpmode);
+    wait(0.3);
     titleEnd = true;
     pok.display.clear();
 }
@@ -71,6 +77,7 @@ void menuScreen(){//title
     while (btn.aBtn() == false){
        btn.pollButtons();
     }
+    snd.playTone(1,500,amplitude,wavetype,arpmode);
     menu = false;
     display.clear();
 }
@@ -98,6 +105,7 @@ void level1(){
     //pause menu
     if (btn.cBtn()){
         display.setCursor(50,30);
+        snd.playTone(1,500,amplitude,wavetype,arpmode);
         display.print("Pause");
         display.update();
         wait(0.5);
@@ -126,7 +134,7 @@ void level1(){
         if (x1 < 158){
             //advance the level with a
             if (btn.aBtn() || btn.bBtn() || btn.upBtn()){
-                //sound.tone(500, 23);
+                snd.playTone(1,500,amplitude,wavetype,arpmode);
                 display.clear();
                 display.update();
                 level = 2;
@@ -169,12 +177,12 @@ void level2(){
     //detect position
     if (x1 < 147 && x1 > 140){
         if (btn.aBtn() || btn.bBtn() || btn.upBtn()){
-            //sound.tone(500, 23);
+            snd.playTone(1,500,amplitude,wavetype,arpmode);
             display.print("The doctor knows her");
             display.update();
             wait(0.5);
             while (!btn.aBtn() && !btn.bBtn() & !btn.cBtn() && !btn.upBtn()) { }
-            //sound.tone(500, 23);
+            snd.playTone(1,500,amplitude,wavetype,arpmode);
             display.clear();
             level = 3;
             x1 = 1;
@@ -183,7 +191,7 @@ void level2(){
     }
     //detect pause
     if (btn.cBtn()){
-        //sound.tone(500,23);
+        snd.playTone(1,500,amplitude,wavetype,arpmode);
         display.setCursor(50,30);
         display.print("Pause");
         wait(0.5);
@@ -215,7 +223,7 @@ void level3(){
         wait(2.1);
         //Closes dialog
         if (btn.aBtn() || btn.bBtn){
-            //sound.tone(500, 23);
+            snd.playTone(1,500,amplitude,wavetype,arpmode);
             notshown = 0;
         }
   }
@@ -234,6 +242,13 @@ void level3(){
 
 void playdespa(){
     snd.playTone(1,587,amplitude,wavetype,arpmode);
+    wait(0.5);
+    snd.playTone(1,554,amplitude,wavetype,arpmode);
+    wait(0.3);
+    snd.playTone(1,494,amplitude,wavetype,arpmode);
+    wait(0.25);
+    snd.playTone(1,370,amplitude,wavetype,arpmode);
+    wait(0.25);
   //sound.tone(587, 500);
   //delay(500);
   //sound.tone(554, 300);
@@ -296,12 +311,9 @@ int main(){
     display.fontSize = 2;
     display.setFont(font5x7);
     snd.ampEnable(1);
-    snd.playTone(1,tonefreq,amplitude,wavetype,arpmode);
     while( pok.isRunning() ){
         if( !pok.update() ) 
             continue;
-        snd.playTone(1,tonefreq,amplitude,wavetype,arpmode);
-        tonefreq++;
         if (!titleEnd){
             turtleLogo();
         }
